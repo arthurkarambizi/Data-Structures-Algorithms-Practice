@@ -16,7 +16,6 @@ var duplicateZeros = function (arr) {
 		}
 	}
 };
-
 let arr = [0, 1, 7, 6, 0, 2, 0, 7]; //[0,0,1,7,6,0,0,2]
 // let arr = [1, 0, 2, 3, 0, 4, 5, 0]; //[1,0,0,2,3,0,0,4]
 duplicateZeros(arr);
