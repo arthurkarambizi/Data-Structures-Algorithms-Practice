@@ -17,4 +17,4 @@ var thirdMax = function (nums) {
 // let nums = [5,2,6];  // 2
 let nums = [2, 2, 2, 1]; // 2
 
-console.log(thirdMax(nums));
+thirdMax(nums);

@@ -38,4 +38,4 @@ var checkIfExist = function (arr) {
 // let arr = [10, 2, 5, 3]; //output: true /5*2 = 10
 let arr = [-2, 0, 10, -19, 4, 6, -8]; // //output: false
 
-console.log(checkIfExist(arr));
+checkIfExist(arr);

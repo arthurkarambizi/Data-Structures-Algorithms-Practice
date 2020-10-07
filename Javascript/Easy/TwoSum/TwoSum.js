@@ -30,4 +30,4 @@ const twoSum = function (nums, target) {
 
 let nums = [4, 2, 1],
     target = 6;
-console.log(twoSum(nums, target));
+twoSum(nums, target);

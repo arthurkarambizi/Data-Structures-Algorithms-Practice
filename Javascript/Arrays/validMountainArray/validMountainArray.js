@@ -28,4 +28,4 @@ var validMountainArray = function (A) {
 // let A = [3, 5, 3]; // Output: false
 // let A = [0, 3, 2, 1]; //Output: true
 let A = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; //  Output: false
-console.log(validMountainArray(A));
+validMountainArray(A);
