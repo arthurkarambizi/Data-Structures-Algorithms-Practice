@@ -13,4 +13,6 @@ Data Structures And Algorithms Practice
 |485|[Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/) | [Javascript](./javascript/arrays/findMaxConsecutiveOnes.js)|Easy|
 |1295|[Find Numbers with Even Number of Digits](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/) | [Javascript](./javascript/arrays/findNumbers.js)|Easy|
 |88|[Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) | [Javascript](./javascript/arrays/merge.js)|Easy|
-|88|[Move Zeroes](https://leetcode.com/problems/move-zeroes/) | [Javascript](./javascript/arrays/moveZeroes.js)|Easy|
+|283|[Move Zeroes](https://leetcode.com/problems/move-zeroes/) | [Javascript](./javascript/arrays/moveZeroes.js)|Easy|
+|66|[Plus One](https://leetcode.com/problems/plus-one/) | [Javascript](./javascript/arrays/plusOne.js)|Easy|
+|26|[Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | [Javascript](./javascript/arrays/removeDuplicates.js)|Easy|
