@@ -16,3 +16,9 @@ Data Structures And Algorithms Practice
 |283|[Move Zeroes](https://leetcode.com/problems/move-zeroes/) | [Javascript](./javascript/arrays/moveZeroes.js)|Easy|
 |66|[Plus One](https://leetcode.com/problems/plus-one/) | [Javascript](./javascript/arrays/plusOne.js)|Easy|
 |26|[Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | [Javascript](./javascript/arrays/removeDuplicates.js)|Easy|
+|27|[Remove Element](https://leetcode.com/problems/remove-element/) | [Javascript](./javascript/arrays/removeElement.js)|Easy|
+|1299|[Replace Elements with Greatest Element on Right Side](https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/) | [Javascript](./javascript/arrays/replaceElements.js)|Easy|
+|189|[Rotate Array](https://leetcode.com/problems/rotate-array/) | [Javascript](./javascript/arrays/rotate.js)|Easy|
+|977|[Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | [Javascript](./javascript/arrays/sortedSquares.js)|Easy|
+|414|[Third Maximum Number](https://leetcode.com/problems/third-maximum-number/) | [Javascript](./javascript/arrays/thirdMax.js)|Easy|
+|941|[Valid Mountain Array](https://leetcode.com/problems/valid-mountain-array/) | [Javascript](./javascript/arrays/validMountainArray.js)|Easy|
