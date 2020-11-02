@@ -22,3 +22,4 @@ Data Structures And Algorithms Practice
 |977|[Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | [Javascript](./javascript/arrays/sortedSquares.js)|Easy|
 |414|[Third Maximum Number](https://leetcode.com/problems/third-maximum-number/) | [Javascript](./javascript/arrays/thirdMax.js)|Easy|
 |941|[Valid Mountain Array](https://leetcode.com/problems/valid-mountain-array/) | [Javascript](./javascript/arrays/validMountainArray.js)|Easy|
+|1|[Two Sum](https://leetcode.com/problems/two-sum/) | [Javascript](./javascript/easy/twoSum.js), [Python](./python/easy/twoSum.py)|Easy|
