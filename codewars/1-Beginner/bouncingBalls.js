@@ -1,3 +1,4 @@
+//TODO: refactor
 /* A child is playing with a ball on the nth floor of a tall building.The height of this floor, h, is known.
 
 He drops the ball out of the window.The ball bounces(
