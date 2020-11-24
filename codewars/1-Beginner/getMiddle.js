@@ -30,7 +30,7 @@
  */
 function getMiddle(s) {
     const middle = Math.round(s.length / 2);
-	let output = '';
+    let output = '';
 
     if (s.length % 2 === 0) {
         output = `${s[middle - 1]}${s[middle]}`;
