@@ -24,6 +24,5 @@ function reverseString(str) {
     return reversedString;
 }
 
-let str = 'hello my name';
+const str = 'hello my name'; // eman ym olleh
 reverseString(str);
-console.log(reverseString(str))
