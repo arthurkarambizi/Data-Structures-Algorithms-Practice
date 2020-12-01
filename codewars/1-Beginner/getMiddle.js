@@ -41,8 +41,4 @@ function getMiddle(s) {
     return output;
 }
 
-getMiddle('A');
-// getMiddle('testing');
-
-// getMiddle('middle');
-// getMiddle('A');
+getMiddle('test'); // es

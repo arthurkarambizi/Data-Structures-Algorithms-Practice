@@ -38,6 +38,4 @@ function iqTest(numbers) {
     return output;
 }
 
-const arrayOfNumbers = '2 4 7 8 10';
-
-iqTest(arrayOfNumbers);
+iqTest('2 4 7 8 10'); // 3
