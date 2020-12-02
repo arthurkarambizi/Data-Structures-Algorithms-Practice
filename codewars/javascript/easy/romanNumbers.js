@@ -23,21 +23,44 @@
  ** M          1,000
  */
 
+/**
+ * @param {string} roman
+ * @return {number}
+ */
 function solution(roman) {
-    const numbers = {
-        1: 'I',
-        5: 'V',
-        10: 'X',
-        50: 'L',
-        100: 'C',
-        500: 'D',
-        1000: 'M'
-	};
-	let currentNumber = roman;
-	let output = '';
+    const numbers = { I: 1, IV: 4, V: 5, IX: 9, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+    let output = 0;
 
-    let results = Object.keys(numbers).find((element) => Number(element) >= 2000);
-    // console.log(results);
+    const lastTwoLetters = roman.slice(roman.length - 2);
+
+    // check last 2 letters if its 4 or 9
+    if (numbers[lastTwoLetters]) {
+        output += numbers[lastTwoLetters];
+    } else {
+        output += calculate(lastTwoLetters, numbers);
+    }
+
+    if (roman.length > 2) {
+        const otherLetters = roman.slice(0, roman.length - 2);
+        output += calculate(otherLetters, numbers);
+    }
+
+    return output;
 }
 
-solution('IV');
+/**
+ * @param {string} romanLetters
+ * @param {Object} numbers
+ * @return {number}
+ */
+function calculate(romanLetters, numbers) {
+    let results = 0;
+    for (let index = 0; index < romanLetters.length; index++) {
+        const letter = romanLetters[index];
+        results += numbers[letter];
+    }
+
+    return results;
+}
+
+solution('XC');
