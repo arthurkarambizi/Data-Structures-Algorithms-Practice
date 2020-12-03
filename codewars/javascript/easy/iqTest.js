@@ -15,27 +15,39 @@
  ** iqTest("1 2 1 1") => 2 // Second number is even, while the rest of the numbers are odd
  */
 
+const findOutlier = require('./findOutlier.js');
+
 /**
- * @param {string} s
+ * @param {string} numbers
  * @return {number}
  */
 function iqTest(numbers) {
+    //  use check object
+    //  return the even integer if the odd count is greater than one
+    //  return the odd integer if the even count is greater than one
+
     const numbersArray = numbers.split(' ');
-    const evenNumbersPosition = [];
-    const oddNumbersPosition = [];
+    const check = { even: { count: 0, position: 0 }, odd: { count: 0, position: 0 } };
+    let output = null;
 
     for (let index = 0; index < numbersArray.length; index++) {
         const number = Number(numbersArray[index]);
 
         if (number % 2 === 0) {
-            evenNumbersPosition.push(index + 1); // push even number position
+            check.even.count++;
+            check.even.position = index + 1;
         } else {
-            oddNumbersPosition.push(index + 1); // push odd number position
+            check.odd.count++;
+            check.odd.position = index + 1;
         }
+
+        if (check.even.count === 1 && check.odd.count > 1) output = check.even.position;
+        if (check.odd.count === 1 && check.even.count > 1) output = check.odd.position;
+        if (output) break;
     }
 
-    const output = evenNumbersPosition.length === 1 ? evenNumbersPosition[0] : oddNumbersPosition[0];
     return output;
 }
 
-iqTest('2 4 7 8 10'); // 3
+iqTest('2 4 3 8 10'); // 3
+findOutlier('2 4 3 8 10'.split(' ')); //3

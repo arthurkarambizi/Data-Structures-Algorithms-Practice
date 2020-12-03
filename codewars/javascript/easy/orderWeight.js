@@ -6,7 +6,7 @@
 /*
  ** My friend John and I are members of the "Fat to Fit Club (FFC)". John is worried because each month a list with the weights of members is published and each month he is the last on the list which means he is the heaviest.
  **
- ** I am the one who establishes the list so I told him: "Don't worry any more, I will modify the order of the list". It was decided to attribute a "weight" to numbers. The weight of a number will be from now on the sum of its digits.
+ ** I am the one who establishes the list so I told him: "Don't worry any more, I will modify the order of the list". It was decided to attribute a "weight" to numbers. The weight of a number will be from now on the weightSum of its digits.
  **
  ** For example 99 will have "weight" 18, 100 will have "weight" 1 so in the list 100 will come before 99. Given a string with the weights of FFC members in normal order can you give this string ordered by "weights" of these numbers?
  **
@@ -32,21 +32,22 @@ function orderWeight(strng) {
     const stringArray = strng.split(' ');
 
     for (let index = 0; index < stringArray.length; index++) {
-        const element = stringArray[index];
-        const sum = [...element].reduce((a, b) => Number(a) + Number(b), 0);
-        orderWeightArray.push([element, sum]);
+        const weight = stringArray[index];
+        const weightSum = [...weight].reduce((a, b) => Number(a) + Number(b), 0);
+        orderWeightArray.push({ weight, weightSum });
     }
 
-    //compare the sum of the weight
-    orderWeightArray.sort((a, b) => {
-        if (a[1] === b[1]) return a[0] < b[0] ? -1 : 1; // if they have the same sum compare alphabetical ordering
-        return Number(a[1]) - Number(b[1]);
+    //compare the weightSum of the weight
+    orderWeightArray.sort((person, personNext) => {
+        if (person.weightSum === personNext.weightSum) return person.weight < personNext.weight ? -1 : 1; // if they have the same weight compare by alphabetical order
+        return Number(person.weightSum) - Number(personNext.weightSum);
     });
 
-    const outputArray = orderWeightArray.map((element) => element[0]);
+    const output = orderWeightArray.map((person) => person.weight).join(' '); // join array to return a string
 
-    return outputArray.join(' ');
+    return output;
 }
+
 orderWeight('56 65 74 100 99 68 86 180 90'); // "100 180 90 56 65 74 68 86 99"
-// orderWeight("103 123 4444 99 2000") // "2000 103 123 4444 99"
-// orderWeight('2000 10003 1234000 44444444 9999 11 11 22 123'); // "11 11 2000 10003 22 123 1234000 44444444 9999"
+orderWeight('103 123 4444 99 2000'); // "2000 103 123 4444 99"
+orderWeight('2000 10003 1234000 44444444 9999 11 11 22 123'); // "11 11 2000 10003 22 123 1234000 44444444 9999"
