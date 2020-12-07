@@ -65,3 +65,4 @@
 | 5   | [Moving Zeros To The End](https://www.codewars.com/kata/52597aa56021e91c93000cb0)        | [Javascript](./codewars/javascript/easy/moveZeros.js)    | O(n)             | Easy       |
 | 6   | [Roman Numerals Decoder](https://www.codewars.com/kata/51b6249c4612257ac0000005)         | [Javascript](./codewars/javascript/easy/romanNumbers.js) | O(n)             | Easy       |
 | 6   | [A Rule of Divisibility by 13](https://www.codewars.com/kata/564057bc348c7200bd0000ff)   | [Javascript](./codewars/javascript/easy/thirt.js)        | O(n<sup>2</sup>) | Easy       |
+| 7   | [WeIrD StRiNg CaSe](https://www.codewars.com/kata/52b757663a95b11b3d00062d)              | [Javascript](./codewars/javascript/easy/toWeirdCase.js)  | O(n)             | Easy       |
