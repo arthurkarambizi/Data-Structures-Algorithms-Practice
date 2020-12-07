@@ -1,45 +1,46 @@
+/*
+ ** Source : https://www.codewars.com/kata/52b757663a95b11b3d00062d
+ ** Date   : 12-7-2020
+ */
+
+/*
+ ** Write a function toWeirdCase (weirdcase in Ruby) that accepts a string, and returns the same string with all even indexed characters in each word upper cased, and all odd indexed characters in each word lower cased. The indexing just explained is zero based, so the zero-ith index is even, therefore that character should be upper cased.
+ **
+ ** The passed in string will only consist of alphabetical characters and spaces(' '). Spaces will only be present if there are multiple words. Words will be separated by a single space(' ').
+ **
+ ** Examples:
+ ** toWeirdCase( "String" );//=> returns "StRiNg"
+ ** toWeirdCase( "Weird string case" );//=> returns "WeIrD StRiNg CaSe"
+ **
+ */
+
+/**
+ * @param {string} string
+ * @return {string}
+ */
 function toWeirdCase(string) {
-    let stringArray = string.split(' ');
-    let finalArray = [];
+    let counter = 0;
+    let output = '';
 
-    for (let index = 0; index < stringArray.length; index++) {
-        const subString = stringArray[index];
-        let subStringArray = subString.split('');
-        const substringCap = [];
+    for (let index = 0; index < string.length; index++) {
+        const letter = string[index];
 
-        for (let index = 0; index < subStringArray.length; index++) {
-            const letter = subStringArray[index];
-
-            if (index % 2 == 0) {
-                substringCap.push(letter.toUpperCase());
-            } else {
-                substringCap.push(letter);
-            }
+        if (counter % 2 === 0) {
+            output += letter.toUpperCase();
+        } else {
+            output += letter;
         }
 
-        finalArray.push(substringCap.join(''));
+        counter++;
+
+        if (letter === ' ') {
+            counter = 0;
+            output += '';
+        }
     }
-    return finalArray.join(' ');
+
+    return output;
 }
 
-let string = 'this';
-
-toWeirdCase('This is a test');
-
-//--------------------------------------------------------------------------------
-//other solutions
-function toWeirdCase(string) {
-    return string
-        .split(' ')
-        .map(function(word) {
-            return word
-                .split('')
-                .map(function(v, i) {
-                    return i % 2 == 0 ? v.toUpperCase() : v;
-                })
-                .join('');
-        })
-        .join(' ');
-}
-
-//--------------------------------------------------------------------------------
+toWeirdCase('StRiNg'); // "StRiNg"
+toWeirdCase('Weird string case'); //"WeIrD StRiNg CaSe"
