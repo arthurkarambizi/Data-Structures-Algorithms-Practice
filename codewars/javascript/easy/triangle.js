@@ -1,13 +1,26 @@
-/*  Implement a method that accepts 3 integer values a, b, c. The method should return true if a triangle can be built with the sides of given length and false in any other case. */
+/*
+ ** Source : https://www.codewars.com/kata/56606694ec01347ce800001b
+ ** Date   : 12-8-2020
+ */
 
-const isTriangle = (a, b, c) => {
-    const firstCase = a + b;
-    const secondCase = c + a;
-    const thirdCase = b + c;
-    if (firstCase > c && secondCase > b && thirdCase > a) {
-        return true;
-    }
-    return false;
-};
+/*
+ ** Implement a method that accepts 3 integer values a, b, c. The method should return true if a triangle can be built with the sides of given length and false in any other case.
+ **
+ ** (In this case, all triangles must have surface greater than 0 to be accepted).
+ */
 
-isTriangle(7, 5, 10);
+/**
+ * @param {number} a
+ * @param {number} b
+ * @param {number} c
+ * @return {boolean}
+ */
+function isTriangle(a, b, c) {
+    const firstCase = a + b > c;
+    const secondCase = c + a > b;
+    const thirdCase = b + c > a;
+
+    return firstCase && secondCase && thirdCase;
+}
+
+isTriangle(7, 5, 10); // true
