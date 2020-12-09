@@ -1,58 +1,47 @@
-/* What is an anagram ? Well, two words are anagrams of each other
-if they both contain the same letters.For example:
-'abba' & 'baab' == true
-'abba' & 'bbaa' == true
-'abba' & 'abbba' == false
-'abba' & 'abca' == false */
+/*
+ ** Source : https://www.codewars.com/kata/523a86aa4230ebb5420001e1
+ ** Date   : 12-8-2020
+ */
 
-let word = 'abba';
-let wordsArray = ['aabb', 'abcd', 'bbaa', 'dada'];
+/*
+ ** What is an anagram? Well, two words are anagrams of each other if they both contain the same letters. For example:
+ **
+ ** 'abba' & 'baab' == true
+ **
+ ** 'abba' & 'bbaa' == true
+ **
+ ** 'abba' & 'abbba' == false
+ **
+ ** 'abba' & 'abca' == false
+ ** Write a function that will find all the anagrams of a word from a list. You will be given two inputs a word and an array with words. You should return an array of all the anagrams or an empty array if there are none. For example:
+ **
+ ** anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']) => ['aabb', 'bbaa']
+ **
+ ** anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']) => ['carer', 'racer']
+ **
+ ** anagrams('laser', ['lazing', 'lazy',  'lacer']) => []
+ */
 
+/**
+ * @param {sting} word
+ * @param {array} wordsArray
+ * @return {array}
+ */
 function anagrams(word, wordsArray) {
-    let wordSplit = word.split('');
-    let wordSorted = wordSplit.sort();
-    let wordsArraySorted = [];
-    let resultsIndex = [];
-    let finalResults = [];
+    const wordSorted = word.split('').sort().join('');
+    const output = [];
 
-    //sort letters in each array in wordsArray array 'wordsArraySorted'
-    wordsArray.forEach(element => {
-        let wordsLetters = element.split('');
-        let wordsLettersSplited = wordsLetters.sort();
-        wordsArraySorted.push(wordsLettersSplited);
-    });
+    for (let index = 0; index < wordsArray.length; index++) {
+        const currentWordSorted = wordsArray[index].split('').sort().join('');
 
-    //compare letters in wordSorted with each array in wordsArraySorted
-    wordsArraySorted.forEach((test, index) => {
-        if (JSON.stringify(wordSorted) === JSON.stringify(test)) {
-            resultsIndex.push(index);
+        if (wordSorted === currentWordSorted) {
+            output.push(wordsArray[index]);
         }
-    });
+    }
 
-    //return results
-    resultsIndex.forEach(index => {
-        finalResults.push(wordsArray[index]);
-    });
-
-    return finalResults;
+    return output;
 }
 
-anagrams(word, wordsArray);
-
-//--------------------------------------------------------------------------------
-
-//other Solutions
-
-function anagrams(word, wordsArray) {
-    word = word.split('').sort().join('');
-    return wordsArray.filter(function (v) {
-        return word == v.split('').sort().join('');
-    });
-}
-
-//--------------------------------------------------------------------------------
-
-function anagrams(word, wordsArray) {
-    const sword = [...word].sort().join('');
-    return wordsArray.filter(w => [...w].sort().join('') === sword);
-}
+anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']); // ['aabb', 'bbaa']
+anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']); // ['carer', 'racer']
+anagrams('laser', ['lazing', 'lazy', 'lacer']); // []

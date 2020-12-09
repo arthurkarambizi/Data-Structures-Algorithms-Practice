@@ -56,14 +56,15 @@
 
 ### CodeWars
 
-| #   | Title                                                                                    | Solution                                                 | Time             | Difficulty |
-| --- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------- | ---------------- | ---------- |
-| 1   | [Replace With Alphabet Position](https://www.codewars.com/kata/546f922b54af40e1e90001da) | [Javascript](./codewars/javascript/easy/alphabet.js)     | O(n)             | Easy       |
-| 2   | [Find The Parity Outlier](https://www.codewars.com/kata/5526fc09a1bbd946250002dc)        | [Javascript](./codewars/javascript/easy/findOutlier.js)  | O(n)             | Easy       |
-| 3   | [Get the Middle Character](https://www.codewars.com/kata/56747fd5cb988479af000028)       | [Javascript](./codewars/javascript/easy/getMiddle.js)    | O(n)             | Easy       |
-| 4   | [IQ Test](https://www.codewars.com/kata/552c028c030765286c00007d)                        | [Javascript](./codewars/javascript/easy/iqTest.js)       | O(n)             | Easy       |
-| 5   | [Moving Zeros To The End](https://www.codewars.com/kata/52597aa56021e91c93000cb0)        | [Javascript](./codewars/javascript/easy/moveZeros.js)    | O(n)             | Easy       |
-| 6   | [Roman Numerals Decoder](https://www.codewars.com/kata/51b6249c4612257ac0000005)         | [Javascript](./codewars/javascript/easy/romanNumbers.js) | O(n)             | Easy       |
-| 7   | [A Rule of Divisibility by 13](https://www.codewars.com/kata/564057bc348c7200bd0000ff)   | [Javascript](./codewars/javascript/easy/thirt.js)        | O(n<sup>2</sup>) | Easy       |
-| 8   | [WeIrD StRiNg CaSe](https://www.codewars.com/kata/52b757663a95b11b3d00062d)              | [Javascript](./codewars/javascript/easy/toWeirdCase.js)  | O(n)             | Easy       |
-| 9   | [Is this a triangle?](https://www.codewars.com/kata/56606694ec01347ce800001b)            | [Javascript](./codewars/javascript/easy/triangle.js)     | O(1)             | Easy       |
+| #   | Title                                                                                    | Solution                                                 | Time                  | Difficulty |
+| --- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------- | --------------------- | ---------- |
+| 1   | [Replace With Alphabet Position](https://www.codewars.com/kata/546f922b54af40e1e90001da) | [Javascript](./codewars/javascript/easy/alphabet.js)     | O(n)                  | Easy       |
+| 2   | [Find The Parity Outlier](https://www.codewars.com/kata/5526fc09a1bbd946250002dc)        | [Javascript](./codewars/javascript/easy/findOutlier.js)  | O(n)                  | Easy       |
+| 3   | [Get the Middle Character](https://www.codewars.com/kata/56747fd5cb988479af000028)       | [Javascript](./codewars/javascript/easy/getMiddle.js)    | O(n)                  | Easy       |
+| 4   | [IQ Test](https://www.codewars.com/kata/552c028c030765286c00007d)                        | [Javascript](./codewars/javascript/easy/iqTest.js)       | O(n)                  | Easy       |
+| 5   | [Moving Zeros To The End](https://www.codewars.com/kata/52597aa56021e91c93000cb0)        | [Javascript](./codewars/javascript/easy/moveZeros.js)    | O(n)                  | Easy       |
+| 6   | [Roman Numerals Decoder](https://www.codewars.com/kata/51b6249c4612257ac0000005)         | [Javascript](./codewars/javascript/easy/romanNumbers.js) | O(n)                  | Easy       |
+| 7   | [A Rule of Divisibility by 13](https://www.codewars.com/kata/564057bc348c7200bd0000ff)   | [Javascript](./codewars/javascript/easy/thirt.js)        | O(n<sup>2</sup>)      | Easy       |
+| 8   | [WeIrD StRiNg CaSe](https://www.codewars.com/kata/52b757663a95b11b3d00062d)              | [Javascript](./codewars/javascript/easy/toWeirdCase.js)  | O(n)                  | Easy       |
+| 9   | [Is this a triangle?](https://www.codewars.com/kata/56606694ec01347ce800001b)            | [Javascript](./codewars/javascript/easy/triangle.js)     | O(1)                  | Easy       |
+| 10  | [Where my anagrams at?](https://www.codewars.com/kata/523a86aa4230ebb5420001e1)          | [Javascript](./codewars/javascript/medium/anagram.js)    | O(n<sup>2</sup>log n) | Medium     |
