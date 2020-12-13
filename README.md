@@ -70,3 +70,4 @@
 | 10  | [Where my anagrams at?](https://www.codewars.com/kata/523a86aa4230ebb5420001e1)            | [Javascript](./codewars/javascript/medium/anagram.js)            | O(n<sup>2</sup>log n) | 5 kyu      |
 | 11  | [Counting Duplicates](https://www.codewars.com/kata/54bf1c2cd5b56cc47f0007a1)              | [Javascript](./codewars/javascript/medium/duplicateCount.js)     | O(n)                  | 6 kyu      |
 | 12  | [Does my number look big in this?](https://www.codewars.com/kata/5287e858c6b5a9678200083c) | [Javascript](./codewars/javascript/medium/narcissisticNumber.js) | O(n)                  | 6 kyu      |
+| 13  | [Sorted Arrays](https://www.codewars.com/kata/56f2d43fe40b70a442000f26)                    | [Javascript](./codewars/javascript/medium/sortedArrays.js)       | O(nlog n)             | 6 kyu      |
