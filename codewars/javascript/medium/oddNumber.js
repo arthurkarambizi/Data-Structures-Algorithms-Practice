@@ -1,36 +1,43 @@
-/* Given an array, find the int that appears an odd number of times.
-There will always be only one integer that appears an odd number of times. */
+/*
+ ** Source : https://www.codewars.com/kata/54da5a58ea159efa38000836
+ ** Date   : 12-16-2020
+ */
 
+/*
+ ** Given an array of integers, find the one that appears an odd number of times.
+ **
+ ** There will always be only one integer that appears an odd number of times.
+ */
+
+/**
+ * @param {array} A
+ * @return {number}
+ */
 function findOdd(A) {
-    let oddCountedNumber;
-    let countedNumbers = A.reduce(function(allNumbers, number) {
-        if (number in allNumbers) {
-            allNumbers[number]++;
+    const countObject = {};
+    let output = null;
+
+    for (let index = 0; index < A.length; index++) {
+        const number = A[index];
+
+        if (number in countObject) {
+            countObject[number] += 1;
         } else {
-            allNumbers[number] = 1;
+            countObject[number] = 1;
         }
-        return allNumbers;
-    }, {});
+    }
 
-    countedNumbersValues = Object.values(countedNumbers);
-    countedNumbersKeys = Object.keys(countedNumbers);
-
-    countedNumbersValues.forEach((value, index) => {
-        if (value % 2 === 1) {
-            oddCountedNumber = Number(countedNumbersKeys[index]);
+    for (const number in countObject) {
+        if (countObject[number] % 2 === 1) {
+            output = Number(number);
+            break;
         }
-    });
-    return oddCountedNumber;
+    }
+
+    return output;
 }
 
-findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]);
-
-//--------------------------------------------------------------------------------
-//other solutions
-
-function findOdd(arr) {
-    return arr.find((item, index) => arr.filter(el => el == item).length % 2);
-}
-
-//--------------------------------------------------------------------------------
-const findOdd = xs => xs.reduce((a, b) => a ^ b);
+findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]); // 5
+findOdd([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5]); // -1
+findOdd([10]); // 10
+findOdd([5, 4, 3, 2, 1, 5, 4, 3, 2, 10, 10]); // 1
