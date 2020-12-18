@@ -52,6 +52,26 @@
  ** thirt(321) calculates 48, 48 and returns 48
  */
 
+ /**
+ * @param {number} n
+ * @return {number}
+ */
+function calculate(n) {
+    // when n = 1234567, output = 7×1 + 6×10 + 5×9 + 4×12 + 3×3 + 2×4 + 1×1 = 178
+
+    const number = String(n);
+    let power = 0;
+    let output = 0;
+
+    for (let index = number.length - 1; index >= 0; index--) {
+        const currentNumber = Number(number[index]);
+        const remainder = Math.pow(10, power++) % 13;
+        output += currentNumber * remainder;
+    }
+
+    return output;
+}
+
 /**
  * @param {number} n
  * @return {number}
@@ -86,26 +106,6 @@ function thirt(n) {
         }
 
         number = newResults;
-    }
-
-    return output;
-}
-
-/**
- * @param {number} n
- * @return {number}
- */
-function calculate(n) {
-    // when n = 1234567, output = 7×1 + 6×10 + 5×9 + 4×12 + 3×3 + 2×4 + 1×1 = 178
-
-    const number = String(n);
-    let power = 0;
-    let output = 0;
-
-    for (let index = number.length - 1; index >= 0; index--) {
-        const currentNumber = Number(number[index]);
-        const remainder = Math.pow(10, power++) % 13;
-        output += currentNumber * remainder;
     }
 
     return output;

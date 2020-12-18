@@ -23,6 +23,21 @@
  ** M          1,000
  */
 
+ /**
+ * @param {string} romanLetters
+ * @param {Object} numbers
+ * @return {number}
+ */
+function calculate(romanLetters, numbers) {
+    let results = 0;
+    for (let index = 0; index < romanLetters.length; index++) {
+        const letter = romanLetters[index];
+        results += numbers[letter];
+    }
+
+    return results;
+}
+
 /**
  * @param {string} roman
  * @return {number}
@@ -48,19 +63,5 @@ function solution(roman) {
     return output;
 }
 
-/**
- * @param {string} romanLetters
- * @param {Object} numbers
- * @return {number}
- */
-function calculate(romanLetters, numbers) {
-    let results = 0;
-    for (let index = 0; index < romanLetters.length; index++) {
-        const letter = romanLetters[index];
-        results += numbers[letter];
-    }
-
-    return results;
-}
 
 solution('XC');
