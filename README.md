@@ -72,3 +72,4 @@
 | 12  | [Does my number look big in this?](https://www.codewars.com/kata/5287e858c6b5a9678200083c) | [Javascript](./codewars/javascript/medium/narcissisticNumber.js) | O(n)                  | 6 kyu      |
 | 13  | [Sorted Arrays](https://www.codewars.com/kata/56f2d43fe40b70a442000f26)                    | [Javascript](./codewars/javascript/medium/sortedArrays.js)       | O(nlog n)             | 6 kyu      |
 | 14  | [Find the odd int](https://www.codewars.com/kata/54da5a58ea159efa38000836)                 | [Javascript](./codewars/javascript/medium/oddNumber.js)          | O(n)                  | 6 kyu      |
+| 15  | [Detect Pangram](https://www.codewars.com/kata/545cedaa9943f7fe7b000048)                   | [Javascript](./codewars/javascript/medium/pangram.js)            | O(n)                  | 6 kyu      |

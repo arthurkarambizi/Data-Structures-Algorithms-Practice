@@ -1,6 +1,6 @@
 /*
- ** Source : https://www.codewars.com/kata/54da5a58ea159efa38000836
- ** Date   : 12-16-2020
+ ** Source : https://www.codewars.com/kata/545cedaa9943f7fe7b000048
+ ** Date   : 12-17-2020
  */
 
 /*
