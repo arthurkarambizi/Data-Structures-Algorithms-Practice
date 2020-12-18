@@ -1,80 +1,67 @@
+/*
+ ** Source : https://www.codewars.com/kata/51ba717bb08c1cd60f00002f
+ ** Date   : 12-18-2020
+ */
+
+/*
+ ** A format for expressing an ordered list of integers is to use a comma separated list of either
+ **
+ ** individual integers
+ ** or a range of integers denoted by the starting integer separated from the end integer in the range by a dash, '-'. The range includes all integers in the interval including both endpoints. It is not considered a range unless it spans at least 3 numbers. For example "12,13,15-17"
+ ** Complete the solution so that it takes a list of integers in increasing order and returns a correctly formatted string in the range format.
+ **
+ ** Example:
+ **
+ ** solution([-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20]);
+ ** // returns "-6,-3-1,3-5,7-11,14,15,17-20"
+ */
+
+/**
+ * @param {array} list
+ * @return {string}
+ */
 function solution(list) {
-    let finalArray = [];
+    // list = [-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20]
+    // string = -6/-3&&-2&&-10&&1/3&&4&&5/7&&8&&9&&10&&11/14&&15/17&&18&&19&&20
+    // stringArray = [ '-6', '-3&&-2&&-10&&1', '3&&4&&5', '7&&8&&9&&10&&11', '14&&15', '17&&18&&19&&20' ]
+    // ouput = [-6,-3-1,3-5,7-11,14,15,17-20]
+
+    let string = '';
+    let output = [];
+
     for (let index = 0; index < list.length; index++) {
-        let currentNumber = list[index];
-        let nextNumber = list[index + 1];
-        let previousNumber = list[index - 1];
+        const currentNumber = list[index];
+        const nextNumber = list[index + 1];
 
-        let condition = currentNumber + 1 === nextNumber;
-        let conditionTwo = currentNumber - 1 === previousNumber;
-
-        if (condition) {
-            finalArray.push(currentNumber);
-        } else if (conditionTwo) {
-            finalArray.push(currentNumber, '');
-        } else {
-            finalArray.push(currentNumber, '');
-        }
-    }
-
-    let resultsArray = finalArray.join().split(',,');
-    let categoryArrays = [];
-    resultsArray.forEach(category => {
-        categoryArrays.push([category]);
-    });
-
-    let finalisedArray = [];
-    categoryArrays.forEach(categoryArray => {
-        categoryArray.forEach(element => {
-            finalisedArray.push(element.split(','));
-        });
-    });
-
-    let rangeArray = [];
-    finalisedArray.forEach(arr => {
-        if (arr.length >= 3) {
-            if (!arr[arr.length - 1]) {
-                let range = `${arr[0]}-${arr[arr.length - 2]}`;
-                if (range.includes('--')) {
-                    let rangetest = range.split('--').join();
-                    rangeArray.push(rangetest);
-                } else {
-                    rangeArray.push(range);
-                }
+        if (nextNumber) {
+            if (currentNumber + 1 === nextNumber) {
+                string += `${currentNumber}&&`;
             } else {
-                let range2 = `${arr[0]}-${arr[arr.length - 1]}`;
-                rangeArray.push(range2);
+                string += `${currentNumber}/`;
             }
         } else {
-            arr.forEach(element => {
-                rangeArray.push(element);
-            });
+            string += `${currentNumber}`; // last element of the array
         }
-    });
-    let finalTerm;
-
-    let results = rangeArray.join();
-    if (results[results.length - 1] === ',') {
-        finalTerm = results.slice(0, results.length - 1);
-    } else {
-        finalTerm = `${rangeArray.join()}`;
     }
-    return `${finalTerm}`;
+
+    const stringArray = string.split('/');
+
+    for (let index = 0; index < stringArray.length; index++) {
+        const currentArray = stringArray[index].split('&&');
+
+        if (currentArray.length < 3) {
+            output.push(...currentArray);
+        } else {
+            const firstElement = currentArray[0];
+            const lastElement = currentArray[currentArray.length - 1];
+            const range = `${firstElement}-${lastElement}`;
+
+            output.push(range);
+        }
+    }
+
+    return output.join(',');
 }
 
-solution([
-    -77,
-    -74,
-    -73,
-    -72,
-    -70,
-    -69,
-    -66,
-    -64,
-    -61,
-    -58,
-    -56,
-    -54,
-    -53,
-    -52
-]);
+// solution([-77, -74, -73, -72, -70, -69, -66, -64, -61, -58, -56, -54, -53, -52]);
+solution([-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20]); // returns "-6,-3-1,3-5,7-11,14,15,17-20"

@@ -43,7 +43,7 @@ var sumEvenAfterQueries = function (A, queries) {
         });
 
         const evenTotal = newChanges
-            .filter(element => {
+            .filter((element) => {
                 return element % 2 === 0;
             })
             .reduce((sum, product) => {
@@ -68,54 +68,3 @@ let queries = [
 ];
 
 sumEvenAfterQueries(A, queries);
-
-//--------------------------------------------------------------------------------
-//other solutions
-
-var sumEvenAfterQueries = function(A, queries) {
-    //a place store our even totals...
-    let evens = [];
-
-    //first we figure out our current evens total
-    let total = 0;
-    for (let i = 0; i < A.length; i++) {
-        if (isEven(A[i])) total += A[i];
-    }
-
-    //then we do our calculations and update our total in one pass
-    for (let i = 0; i < queries.length; i++) {
-
-        let iter = queries[i][1];
-        //lets keep track of the orginal value before we modify it
-        let original = A[iter];
-
-        A[iter] += parseInt(queries[i][0]);
-        /*if our original number was even and our new number is even, we need to subtract our original
-          and add in our new value
-        */
-        if (isEven(original) && isEven(A[iter])) {
-            total -= original;
-            total += A[iter];
-        }
-        /*if our original number was never even and our new number is even, we need to
-          add in our new value
-        */
-        if (!isEven(original) && isEven(A[iter])) {
-            total += A[iter];
-        }
-        /*if our original number was even and our new number is not even, we need to
-          subtract our original value
-        */
-        if (isEven(original) && !isEven(A[iter])) {
-            total -= original;
-        }
-        //add updated total to array
-        evens.push(total);
-    }
-
-    return evens;
-};
-//simple function to check if number is even
-var isEven = (x) => {
-    return x % 2 === 0;
-}

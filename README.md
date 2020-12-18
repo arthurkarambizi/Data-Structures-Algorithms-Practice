@@ -73,4 +73,5 @@
 | 13  | [Sorted Arrays](https://www.codewars.com/kata/56f2d43fe40b70a442000f26)                    | [Javascript](./codewars/javascript/medium/sortedArrays.js)       | O(nlog n)             | 6 kyu      |
 | 14  | [Find the odd int](https://www.codewars.com/kata/54da5a58ea159efa38000836)                 | [Javascript](./codewars/javascript/medium/oddNumber.js)          | O(n)                  | 6 kyu      |
 | 15  | [Detect Pangram](https://www.codewars.com/kata/545cedaa9943f7fe7b000048)                   | [Javascript](./codewars/javascript/medium/pangram.js)            | O(n)                  | 6 kyu      |
-| 15  | [Persistent Bugger](https://www.codewars.com/kata/55bf01e5a717a0d57e0000ec)                | [Javascript](./codewars/javascript/medium/persistenceNum.js)     | O(n<sup>2</sup>)      | 6 kyu      |
+| 16  | [Persistent Bugger](https://www.codewars.com/kata/55bf01e5a717a0d57e0000ec)                | [Javascript](./codewars/javascript/medium/persistenceNum.js)     | O(n<sup>2</sup>)      | 6 kyu      |
+| 17  | [Range Extraction](https://www.codewars.com/kata/51ba717bb08c1cd60f00002f)                 | [Javascript](./codewars/javascript/medium/rangeExtraction.js)    | O(n<sup>2</sup>)      | 4 kyu      |

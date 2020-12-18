@@ -4,18 +4,18 @@
  */
 
 /*
-** Given any number of arrays each sorted in ascending order, find the nth smallest number of all their elements.
-**
-** All the arguments except the last will be arrays, the last argument is n.
-**
-** nthSmallest([1,5], [2], [4,8,9], 4) // returns 5 because it's the 4th smallest value
-*/
+ ** Given any number of arrays each sorted in ascending order, find the nth smallest number of all their elements.
+ **
+ ** All the arguments except the last will be arrays, the last argument is n.
+ **
+ ** nthSmallest([1,5], [2], [4,8,9], 4) // returns 5 because it's the 4th smallest value
+ */
 
+/**
+ * @return {number}
+ */
 function nthSmallest() {
-    const params = [...arguments];
-    const nthSmallest = params[params.length - 1];
-    const numbersArray = params.slice(0, params.length - 1);
-
+    const [numbersArray, nthSmallest] = [...arguments];
     const numbersArrayMerged = [].concat(...numbersArray);
 
     numbersArrayMerged.sort((a, b) => a - b);
@@ -24,4 +24,4 @@ function nthSmallest() {
 }
 
 nthSmallest([2, 4, 6, 8, 10, 12], 4);
-nthSmallest([1,5], [2], [4,8,9], 4);
+nthSmallest([1, 5], [2], [4, 8, 9], 4);
