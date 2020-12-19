@@ -52,7 +52,7 @@
  ** thirt(321) calculates 48, 48 and returns 48
  */
 
- /**
+/**
  * @param {number} n
  * @return {number}
  */
@@ -77,22 +77,24 @@ function calculate(n) {
  * @return {number}
  */
 function thirt(n) {
-    // when n = 1234567
-    // number = 1234567
-    // newResults = 7×1 + 6×10 + 5×9 + 4×12 + 3×3 + 2×4 + 1×1 = 178
-
-    // if number != newResults
-    // We repeat the process with the number 178:
-    // number = 178
-    // newResults = 8x1 + 7x10 + 1x9 = 87
-
-    // if number != newResults
-    // We repeat the process with the number 87:
-    // number = 87
-    // newResults = 7x1 + 8x10 = 87
-
-    // if (number === newResults) output = number
-    // return output => 87
+    /*
+     **     when n = 1234567
+     **     number = 1234567
+     **     newResults = 7×1 + 6×10 + 5×9 + 4×12 + 3×3 + 2×4 + 1×1 = 178
+     **
+     **     if number != newResults, 1234567 !== 178
+     **     We repeat the process with the number 178:
+     **     number = 178
+     **     newResults = 8x1 + 7x10 + 1x9 = 87
+     **
+     **     if number != newResults, 178 !== 87
+     **     We repeat the process with the number 87:
+     **     number = 87
+     **     newResults = 7x1 + 8x10 = 87
+     **
+     **     if (number === newResults) output = number
+     **     return output => 87
+     */
 
     let number = String(n);
     let newResults = null;

@@ -23,15 +23,19 @@
  * @return {boolean}
  */
 function scramble(str1, str2) {
-    const str1LettersObject = createLettersObject(str1);
-    const str2LettersObject = createLettersObject(str2);
+    /*
+     **     str1: 'katas',  str2: 'steak'
+     **     str1Object : { k: 1, a: 2, t: 1, s: 1 }
+     **     str2Object : { s: 1, t: 1, e: 1, a: 1, k: 1 }
+     **     e is not in str1Object output = false
+     */
 
+    const str1Object = createStringObject(str1);
+    const str2Object = createStringObject(str2);
     let output = true;
 
-    for (const letter in str2LettersObject) {
-        if (str2LettersObject[letter] <= str1LettersObject[letter]) {
-            output = true;
-        } else {
+    for (const letter in str2Object) {
+        if (str2Object[letter] > str1Object[letter] || !(letter in str1Object)) {
             output = false;
             break;
         }
@@ -44,26 +48,26 @@ function scramble(str1, str2) {
  * @param {string} string
  * @return {Object} ex: {a:1, b:2, c:3}
  */
-function createLettersObject(string) {
-    const lettersObject = {};
+function createStringObject(string) {
+    const stringObject = {};
     for (let index = 0; index < string.length; index++) {
         const letter = string[index];
 
-        if (!lettersObject[letter]) {
-            lettersObject[letter] = 1;
+        if (letter in stringObject) {
+            stringObject[letter] += 1;
         } else {
-            lettersObject[letter] += 1;
+            stringObject[letter] = 1;
         }
     }
 
-    return lettersObject;
+    return stringObject;
 }
 
-scramble('rkqodlw', 'world'); // true
-scramble('cedewaraaossoqqyt', 'codewars'); //true
+// scramble('rkqodlw', 'world'); // true
+// scramble('cedewaraaossoqqyt', 'codewars'); //true
 scramble('katas', 'steak'); //false
-scramble('scriptjava', 'javascript'); //true
-scramble('scriptingjava', 'javascript'); //    true
-scramble('scriptsjava', 'javascripts'); //   true
-scramble('jscripts', 'javascript'); //false
-scramble('aabbcamaomsccdd', 'commas'); //   true
+// scramble('scriptjava', 'javascript'); //true
+// scramble('scriptingjava', 'javascript'); //    true
+// scramble('scriptsjava', 'javascripts'); //   true
+// scramble('jscripts', 'javascript'); //false
+// scramble('aabbcamaomsccdd', 'commas'); //   true
