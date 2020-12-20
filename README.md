@@ -76,3 +76,4 @@
 | 16  | [Persistent Bugger](https://www.codewars.com/kata/55bf01e5a717a0d57e0000ec)                | [Javascript](./codewars/javascript/medium/persistenceNum.js)     | O(n<sup>2</sup>)      | 6 kyu      |
 | 17  | [Range Extraction](https://www.codewars.com/kata/51ba717bb08c1cd60f00002f)                 | [Javascript](./codewars/javascript/medium/rangeExtraction.js)    | O(n<sup>2</sup>)      | 4 kyu      |
 | 18  | [Square Every Digit](https://www.codewars.com/kata/546e2562b03326a88e000020)               | [Javascript](./codewars/javascript/easy/squareDigits.js)         | O(n)                  | 7 kyu      |
+| 19  | [Greed is Good](https://www.codewars.com/kata/5270d0d18625160ada0000e4)                    | [Javascript](./codewars/javascript/easy/scoreDice.js)            | O(n)                  | 5 kyu      |
