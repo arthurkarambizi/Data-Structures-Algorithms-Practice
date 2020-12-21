@@ -21,7 +21,7 @@
  * @param {number} num
  * @return {number}
  */
-function calculate(num) {
+function calculateProduct(num) {
     const numString = String(num);
     let product = 1;
 
@@ -41,19 +41,14 @@ function calculate(num) {
 function persistence(num) {
     if (num < 10) return 0;
 
-    let isSingleNumber = false;
-    let currentProduct = null;
     let currentNumber = num;
+    let currentProduct = null;
     let count = 0;
 
-    while (!isSingleNumber) {
-        currentProduct = calculate(currentNumber);
+    while (currentProduct > 10 || currentProduct === null ) {
+        currentProduct = calculateProduct(currentNumber);
         count += 1; // count times currentProduct was calculated
         currentNumber = currentProduct;
-
-        if (currentProduct < 10) {
-            isSingleNumber = true;
-        }
     }
 
     return count;
@@ -61,3 +56,4 @@ function persistence(num) {
 
 persistence(39); // 3
 persistence(4); // 0
+persistence(999) // 4
