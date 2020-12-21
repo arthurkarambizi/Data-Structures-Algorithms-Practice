@@ -15,20 +15,30 @@
  * O(n)
  */
 function isPangram(string) {
-    const alphabets = { a: 0, b: 0, c: 0, d: 0, e: 0, f: 0, g: 0, h: 0, i: 0, j: 0, k: 0, l: 0, m: 0, n: 0, o: 0, p: 0, q: 0, r: 0, s: 0, t: 0, u: 0, v: 0, w: 0, x: 0, y: 0, z: 0 };
     const stringLowerCase = string.toLowerCase();
+    const alphabets = 'abcdefghijklmnopqrstuvwxyz';
+    const alphabetsCounter = {}; // ex: {a:3, b:1, c:6 }
+
     let output = true;
 
+    //set count of each alphabet in alphabetsCounter to 0
+    for (let index = 0; index < alphabets.length; index++) {
+        const letter = alphabets[index];
+        alphabetsCounter[letter] = 0;
+    }
+
+    // add count of each alphabet in stringLowerCase to alphabetsCounter
     for (let index = 0; index < stringLowerCase.length; index++) {
         const letter = stringLowerCase[index];
 
-        if (letter in alphabets) {
-            alphabets[letter] += 1;
+        if (letter in alphabetsCounter) {
+            alphabetsCounter[letter] += 1;
         }
     }
 
-    for (const letter in alphabets) {
-        if (alphabets[letter] === 0) {
+    // check if the count of each alphabet in alphabetsCounter is not 0
+    for (const letter in alphabetsCounter) {
+        if (alphabetsCounter[letter] === 0) {
             output = false;
             break;
         }
@@ -36,12 +46,14 @@ function isPangram(string) {
 
     return output;
 }
+
 /**
  * @param {string} string
  * @return {boolean}
  * O(nlogn)
  */
 function isPangramTwo(string) {
+    // create a sorted string with no duplicates compare it to the alphabets
     const alphabets = 'abcdefghijklmnopqrstuvwxyz';
 
     const stringJoined = string.replace(/[^a-zA-Z]+/g, '').toLowerCase(); // return only alphabets
