@@ -45,7 +45,7 @@ function persistence(num) {
     let currentProduct = null;
     let count = 0;
 
-    while (currentProduct > 10 || currentProduct === null ) {
+    while (currentNumber > 10) {
         currentProduct = calculateProduct(currentNumber);
         count += 1; // count times currentProduct was calculated
         currentNumber = currentProduct;
@@ -56,4 +56,4 @@ function persistence(num) {
 
 persistence(39); // 3
 persistence(4); // 0
-persistence(999) // 4
+persistence(999); // 4
