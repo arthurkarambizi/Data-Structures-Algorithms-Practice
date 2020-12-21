@@ -19,7 +19,7 @@ function isPangram(string) {
     const alphabets = 'abcdefghijklmnopqrstuvwxyz';
     const alphabetsCounter = {}; // ex: {a:3, b:1, c:6 }
 
-    let output = true;
+    let isPangram = true;
 
     //set count of each alphabet in alphabetsCounter to 0
     for (let index = 0; index < alphabets.length; index++) {
@@ -39,12 +39,12 @@ function isPangram(string) {
     // check if the count of each alphabet in alphabetsCounter is not 0
     for (const letter in alphabetsCounter) {
         if (alphabetsCounter[letter] === 0) {
-            output = false;
+            isPangram = false;
             break;
         }
     }
 
-    return output;
+    return isPangram;
 }
 
 /**
