@@ -1,61 +1,82 @@
 /*
-** Source : https://leetcode.com/problems/contains-duplicate/
-** Date   : 11-01-2020
-*/
+ ** Source : https://leetcode.com/problems/contains-duplicate/
+ ** Date   : 12-22-2020
+ */
 
 /*
-** Given an array of integers, find if the array contains any duplicates.
-**
-** Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.
-**
-** Example 1:
-**
-** Input: [1,2,3,1]
-** Output: true
-** Example 2:
-**
-** Input: [1,2,3,4]
-** Output: false
-** Example 3:
-**
-** Input: [1,1,1,3,3,4,3,2,4,2]
-** Output: true
-*/
+ ** Given an array of integers, find if the array contains any duplicates.
+ **
+ ** Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.
+ **
+ ** Example 1:
+ **
+ ** Input: [1,2,3,1]
+ ** Output: true
+ ** Example 2:
+ **
+ ** Input: [1,2,3,4]
+ ** Output: false
+ ** Example 3:
+ **
+ ** Input: [1,1,1,3,3,4,3,2,4,2]
+ ** Output: true
+ */
 
 /**
  * @param {number[]} nums
  * @return {boolean}
+ * O(n)
  */
-
-var containsDuplicate = function (nums) {
+function containsDuplicate(nums) {
     let set = [...new Set(nums)];
-    return set.length !== nums.length ? true : false;
-};
+    return set.length < nums.length;
+}
 
-// var containsDuplicate = function (nums) {
-//     nums.sort((a, b) => b - a);
-//     for (let index = 0; index < nums.length; index++) {
-//         if (nums[index] === nums[index + 1]) {
-//             return true;
-//         }
-//     }
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ * O(n)
+ */
+function containsDuplicateTwo(nums) {
+    const numsObj = {};
+    let output = false;
 
-//     return false;
-// };
+    for (let index = 0; index < nums.length; index++) {
+        const currentNumber = nums[index];
 
-// var containsDuplicate = function (nums) {
-//     let numsObj = {};
-//     for (let index = 0; index < nums.length; index++) {
-//         if (!(nums[index] in numsObj)) {
-//             numsObj[nums[index]] = nums[index];
-//         } else {
-//             return true;
-//         }
-//     }
+        if (currentNumber in numsObj) {
+            output = true;
+            break;
+        }
 
-//     return false;
-// };
-let nums = [1, 2, 3]; //Output: false
-// let nums = [1, 1, 1, 3, 3, 4, 3, 2, 4, 2]; //Output: true
+        numsObj[currentNumber] = currentNumber;
+    }
 
-containsDuplicate(nums);
+    return output;
+}
+
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ * O(nlogn)
+ */
+function containsDuplicateThree(nums) {
+    let output = false;
+
+    nums.sort((a, b) => b - a);
+
+    for (let index = 0; index < nums.length; index++) {
+        const currentNumber = nums[index];
+        const nextNumber = nums[index + 1];
+
+        if (currentNumber === nextNumber) {
+            output = true;
+            break;
+        }
+    }
+
+    return output;
+}
+
+containsDuplicate([1, 2, 3]); // false
+containsDuplicateTwo([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]); // true
