@@ -1,40 +1,40 @@
 /*
-** Source : https://leetcode.com/problems/duplicate-zeros/
-** Date   : 11-01-2020
-*/
+ ** Source : https://leetcode.com/problems/duplicate-zeros/
+ ** Date   : 11-01-2020
+ */
 
 /*
-** Given a fixed length array arr of integers, duplicate each occurrence of zero, shifting the remaining elements to the right.
-**
-** Note that elements beyond the length of the original array are not written.
-**
-** Do the above modifications to the input array in place, do not return anything from your function.
-**
-**
-**
-** Example 1:
-**
-** Input: [1,0,2,3,0,4,5,0]
-** Output: null
-** Explanation: After calling your function, the input array is modified to: [1,0,0,2,3,0,0,4]
-** Example 2:
-**
-** Input: [1,2,3]
-** Output: null
-** Explanation: After calling your function, the input array is modified to: [1,2,3]
-**
-**
-** Note:
-**
-** 1 <= arr.length <= 10000
-** 0 <= arr[i] <= 9
-*/
+ ** Given a fixed length array arr of integers, duplicate each occurrence of zero, shifting the remaining elements to the right.
+ **
+ ** Note that elements beyond the length of the original array are not written.
+ **
+ ** Do the above modifications to the input array in place, do not return anything from your function.
+ **
+ **
+ **
+ ** Example 1:
+ **
+ ** Input: [1,0,2,3,0,4,5,0]
+ ** Output: null
+ ** Explanation: After calling your function, the input array is modified to: [1,0,0,2,3,0,0,4]
+ ** Example 2:
+ **
+ ** Input: [1,2,3]
+ ** Output: null
+ ** Explanation: After calling your function, the input array is modified to: [1,2,3]
+ **
+ **
+ ** Note:
+ **
+ ** 1 <= arr.length <= 10000
+ ** 0 <= arr[i] <= 9
+ */
 
 /**
  * @param {number[]} arr
  * @return {void} Do not return anything, modify arr in-place instead.
  */
-var duplicateZeros = function (arr) {
+function duplicateZeros(arr) {
     let arrCopy = [...arr];
     let count = 0;
     for (let index = 0; index < arrCopy.length; index++) {
@@ -45,9 +45,9 @@ var duplicateZeros = function (arr) {
             arr.length = arrCopy.length; //reset the arr length
         } else {
             count++;
-		}
-	}
-};
-let arr = [0, 1, 7, 6, 0, 2, 0, 7]; //[0,0,1,7,6,0,0,2]
-// let arr = [1, 0, 2, 3, 0, 4, 5, 0]; //[1,0,0,2,3,0,0,4]
-duplicateZeros(arr);
+        }
+    }
+}
+
+duplicateZeros([0, 1, 7, 6, 0, 2, 0, 7]); // [0,0,1,7,6,0,0,2]
+duplicateZeros([1, 0, 2, 3, 0, 4, 5, 0]); // [1,0,0,2,3,0,0,4]
