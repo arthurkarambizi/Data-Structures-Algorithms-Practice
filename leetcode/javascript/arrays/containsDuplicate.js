@@ -28,7 +28,7 @@
  * O(n)
  */
 function containsDuplicate(nums) {
-    let set = [...new Set(nums)];
+    const set = [...new Set(nums)];
     return set.length < nums.length;
 }
 
