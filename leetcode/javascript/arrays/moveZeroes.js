@@ -19,9 +19,27 @@
 /**
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
- * TODO: refactor O(n^2)
+ * O(n)
  */
 function moveZeroes(nums) {
+    let anchor = 0;
+    for (let index = 0; index < nums.length; index++) {
+        const currentNumber = nums[index];
+
+        if (currentNumber !== 0) {
+            nums[index] = nums[anchor];
+            nums[anchor] = currentNumber;
+            anchor++;
+        }
+    }
+}
+
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ *  O(n^2)
+ */
+function moveZeroes_two(nums) {
     // the indices will be preserved as you go backwards.
     for (let index = nums.length - 1; index >= 0; index--) {
         if (nums[index] === 0) {
@@ -31,4 +49,5 @@ function moveZeroes(nums) {
     }
 }
 
-moveZeroes([0, 1, 0, 3, 12]); //  [1,3,12,0,0];
+moveZeroes([0, 0, 1, 1, 0, 3, 12]); //  [1,3,12,0,0];
+moveZeroes_two([1, 0, 1]); // [1,1,0]

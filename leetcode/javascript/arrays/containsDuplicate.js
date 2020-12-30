@@ -37,7 +37,7 @@ function containsDuplicate(nums) {
  * @return {boolean}
  * O(n)
  */
-function containsDuplicateTwo(nums) {
+function containsDuplicate_Two(nums) {
     const numsObj = {};
     let output = false;
 
@@ -79,4 +79,4 @@ function containsDuplicateThree(nums) {
 }
 
 containsDuplicate([1, 2, 3]); // false
-containsDuplicateTwo([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]); // true
+containsDuplicate_Two([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]); // true

@@ -30,7 +30,7 @@ function findOutlier(integers) {
  * @param {number[]} integers
  * @return {number}
  */
-function findOutlierTwo(integers) {
+function findOutlier_Two(integers) {
     //  use check object
     //  return the even integer if the odd count is greater than one
     //  return the odd integer if the even count is greater than one
@@ -59,6 +59,6 @@ function findOutlierTwo(integers) {
 const integers = [1, 1, 0, 1, 1];
 
 findOutlier(integers);
-findOutlierTwo(integers);
+findOutlier_Two(integers);
 
 module.exports = findOutlier;

@@ -52,7 +52,7 @@ function isPangram(string) {
  * @return {boolean}
  * O(nlogn)
  */
-function isPangramTwo(string) {
+function isPangram_Two(string) {
     // create a sorted string with no duplicates compare it to the alphabets
     const alphabets = 'abcdefghijklmnopqrstuvwxyz';
 
@@ -66,4 +66,4 @@ function isPangramTwo(string) {
 isPangram('The quick brown fox jumps over the lazy dog.'); // true
 isPangram('Pack my box with five dozen liquor jugs.'); // true
 
-isPangramTwo('The quick brown fox jumps over the lazy dog.');
+isPangram_Two('The quick brown fox jumps over the lazy dog.');
